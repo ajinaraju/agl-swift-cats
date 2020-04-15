@@ -5,6 +5,10 @@ Welcome to the AGL programming challenge!
 Please read the instructions completely and carefully. If anything is unclear,
 feel free to reach out and ask questions.
 
+You should *fork* this repository and make changes to your fork, which should
+be *private*. When done, please invite `a144367` and `yilei-agl` to the fork.
+ 
+
 **Task**
 
 A JSON web service has been set up at the url:
@@ -46,4 +50,3 @@ resembling the below example. You are free to choose which UI elements to use.
     - Focus on the data processing part of code. Is it clean? How does it perform?
     - Use industry best practices.
     - Use the code to showcase your skill.
-    
