@@ -32,7 +32,7 @@ Once you have parsed the data correctly, display it on screen in a table
 resembling the below example. You are free to choose which UI elements to use.
 
 **Example**:
-
+```
  ┌──────────────────────────────┐
  ├──────────────────────────────┤
  │             Male             │
@@ -59,7 +59,7 @@ resembling the below example. You are free to choose which UI elements to use.
  │                              │
  │                              │
  └──────────────────────────────┘    
-
+```
 **Notes**:
 
     - The provided project may contain bugs, we expect you to fix them.
