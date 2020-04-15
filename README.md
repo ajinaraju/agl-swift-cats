@@ -7,7 +7,7 @@ feel free to reach out and ask questions.
 
 You should *fork* this repository and make changes to your fork, which should
 be *private*. When done, please invite `a144367` and `yilei-agl` to the fork.
- 
+
 
 **Task**
 
@@ -33,15 +33,32 @@ resembling the below example. You are free to choose which UI elements to use.
 
 **Example**:
 
-* Male
-    - Angel
-    - Molly
-    - Tigger
-
-* Female
-    - Gizmo
-    - Jasper
-    
+ ┌──────────────────────────────┐
+ ├──────────────────────────────┤
+ │             Male             │
+ ├──────────────────────────────┤
+ │                              │
+ │ Angel                        │
+ │ ---------------------------  │
+ │                              │
+ │ Molly                        │
+ │ ---------------------------  │
+ │                              │
+ │ Tigger                       │
+ │ ---------------------------  │
+ │                              │
+ ├──────────────────────────────┤
+ │            Female            │
+ ├──────────────────────────────┤
+ │                              │
+ │ Gizmo                        │
+ │ ---------------------------  │
+ │                              │
+ │ Jasper                       │
+ │ ---------------------------  │
+ │                              │
+ │                              │
+ └──────────────────────────────┘    
 
 **Notes**:
 
