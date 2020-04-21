@@ -6,8 +6,6 @@
 //  Copyright © 2020 Yilei He. All rights reserved.
 //
 
-import Foundation
-
 extension Result {
     func unwrap(success: (Success)->Void, failure: (Error)->Void) {
         switch self {

@@ -23,16 +23,37 @@ enum ServerError: String, Error {
     }
 }
 
+protocol DecoderProtocol {
+    func decode<T>(_ type: T.Type, from data: Data) throws -> T where T : Decodable
+}
+
+extension JSONDecoder: DecoderProtocol {}
+
+protocol NetworkSessionProtocol {
+    func dataTask(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask
+}
+
+extension URLSession: NetworkSessionProtocol {}
+
 class NetworkService: NetworkServiceProtocol {
     static let shared = NetworkService()
-    let decoder = JSONDecoder()
-    
+    let decoder: DecoderProtocol
+    let session: NetworkSessionProtocol
+
+    init(decoder: DecoderProtocol = JSONDecoder(),
+         session: NetworkSessionProtocol = URLSession.shared) {
+        self.decoder = decoder
+        self.session = session
+    }
+
     func getPeople(completion: @escaping (Result<People, Error>) -> Void) {
-        let session = URLSession.shared
-        let url = URL(string: WebServiceConstants.peopleURL)!
+        guard let url = URL(string: WebServiceConstants.EndPoint.getPeople.path) else {
+            completion(.failure(NSError()))
+            return
+        }
         session.dataTask(with: url) {[weak self] (data, response, error) in
             guard let weakSelf = self else { return }
-            
+
             if let error = error {
                 completion(.failure(error))
             }

@@ -6,8 +6,15 @@
 //  Copyright © 2020 Yilei He. All rights reserved.
 //
 
-import Foundation
-
 enum WebServiceConstants {
-    static let peopleURL = "https://agl-developer-test.azurewebsites.net/people.json"
+    static let baseURL = "https://agl-developer-test.azurewebsites.net/"
+    enum EndPoint {
+        case getPeople
+        var path: String {
+            switch self {
+            case .getPeople:
+                return baseURL + "people.json"
+            }
+        }
+    }
 }
