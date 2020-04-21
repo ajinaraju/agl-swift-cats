@@ -6,11 +6,9 @@
 //  Copyright © 2020 Yilei He. All rights reserved.
 //
 
-import Foundation
-
 enum Gender: String, Codable {
-    case Male = "Male"
-    case Female = "Female"
-    case Other
+    case male = "Male"
+    case female = "Female"
+    case other = "Other"
 }
 

@@ -6,14 +6,7 @@
 //  Copyright © 2020 Yilei He. All rights reserved.
 //
 
-import Foundation
-
 struct Pets: Codable {
     let name: String?
     let type: PetType?
-    
-    enum CodingKeys: String, CodingKey {
-        case name = "name"
-        case type = "type"
-    }
 }

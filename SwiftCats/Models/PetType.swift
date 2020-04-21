@@ -6,8 +6,6 @@
 //  Copyright © 2020 Yilei He. All rights reserved.
 //
 
-import Foundation
-
 enum PetType: String, Codable {
     case cat = "Cat"
     case dog = "Dog"
