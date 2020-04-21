@@ -15,6 +15,10 @@
 		87B57A46244EEFDF000DE1E1 /* PetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B57A45244EEFDF000DE1E1 /* PetType.swift */; };
 		87B57A48244EF43C000DE1E1 /* PeopleCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B57A47244EF43C000DE1E1 /* PeopleCellViewModel.swift */; };
 		87B57A4A244F2F61000DE1E1 /* LoadAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B57A49244F2F61000DE1E1 /* LoadAnimatable.swift */; };
+		87B57A4C244F30D3000DE1E1 /* content.json in Resources */ = {isa = PBXBuildFile; fileRef = 87B57A4B244F30D3000DE1E1 /* content.json */; };
+		87B57A4E244F3169000DE1E1 /* MockPeopleListGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B57A4D244F3169000DE1E1 /* MockPeopleListGenerator.swift */; };
+		87B57A50244F328D000DE1E1 /* MockNetworkServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B57A4F244F328D000DE1E1 /* MockNetworkServiceStub.swift */; };
+		87B57A52244F335E000DE1E1 /* PeopleListViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B57A51244F335E000DE1E1 /* PeopleListViewModelTest.swift */; };
 		8B0E5E059B7CA87E2BE61A9E /* Pods_SwiftCats.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1990B0912FF24A872F0A4E15 /* Pods_SwiftCats.framework */; };
 		B882EF9E2436AC2D00421A3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B882EF9D2436AC2D00421A3C /* AppDelegate.swift */; };
 		B882EFA02436AC2D00421A3C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B882EF9F2436AC2D00421A3C /* SceneDelegate.swift */; };
@@ -53,6 +57,10 @@
 		87B57A45244EEFDF000DE1E1 /* PetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetType.swift; sourceTree = "<group>"; };
 		87B57A47244EF43C000DE1E1 /* PeopleCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleCellViewModel.swift; sourceTree = "<group>"; };
 		87B57A49244F2F61000DE1E1 /* LoadAnimatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadAnimatable.swift; sourceTree = "<group>"; };
+		87B57A4B244F30D3000DE1E1 /* content.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = content.json; sourceTree = "<group>"; };
+		87B57A4D244F3169000DE1E1 /* MockPeopleListGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPeopleListGenerator.swift; sourceTree = "<group>"; };
+		87B57A4F244F328D000DE1E1 /* MockNetworkServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkServiceStub.swift; sourceTree = "<group>"; };
+		87B57A51244F335E000DE1E1 /* PeopleListViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListViewModelTest.swift; sourceTree = "<group>"; };
 		B3C171F6377A29AA6FCF2843 /* Pods-SwiftCatsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftCatsTests.release.xcconfig"; path = "Target Support Files/Pods-SwiftCatsTests/Pods-SwiftCatsTests.release.xcconfig"; sourceTree = "<group>"; };
 		B882EF9A2436AC2C00421A3C /* SwiftCats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftCats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B882EF9D2436AC2D00421A3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -206,6 +214,10 @@
 			isa = PBXGroup;
 			children = (
 				B882EFB42436AC2F00421A3C /* SwiftCatsTests.swift */,
+				87B57A51244F335E000DE1E1 /* PeopleListViewModelTest.swift */,
+				87B57A4F244F328D000DE1E1 /* MockNetworkServiceStub.swift */,
+				87B57A4D244F3169000DE1E1 /* MockPeopleListGenerator.swift */,
+				87B57A4B244F30D3000DE1E1 /* content.json */,
 				B882EFB62436AC2F00421A3C /* Info.plist */,
 			);
 			path = SwiftCatsTests;
@@ -316,6 +328,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87B57A4C244F30D3000DE1E1 /* content.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +424,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87B57A50244F328D000DE1E1 /* MockNetworkServiceStub.swift in Sources */,
+				87B57A52244F335E000DE1E1 /* PeopleListViewModelTest.swift in Sources */,
+				87B57A4E244F3169000DE1E1 /* MockPeopleListGenerator.swift in Sources */,
 				B882EFB52436AC2F00421A3C /* SwiftCatsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
