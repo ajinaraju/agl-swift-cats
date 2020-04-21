@@ -54,9 +54,9 @@ class PeopleListViewModel {
                                                                   gender: .male)
         peopleCellViewModel.append(catsWithMaleOwners)
 
-        let catsWithFeMaleOwners = PeopleCellViewModelBuilder.build(from: allCats.female,
+        let catsWithFemaleOwners = PeopleCellViewModelBuilder.build(from: allCats.female,
                                                                 gender: .female)
-        peopleCellViewModel.append(catsWithFeMaleOwners)
+        peopleCellViewModel.append(catsWithFemaleOwners)
 
         let catsWithOtherOwners = PeopleCellViewModelBuilder.build(from:allCats.other,
                                                                    gender: .other)
