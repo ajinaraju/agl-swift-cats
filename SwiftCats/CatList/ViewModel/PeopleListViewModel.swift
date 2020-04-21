@@ -9,7 +9,7 @@
 import UIKit
 
 class PeopleListViewModel {
-    let networkService: NetworkServiceProtocol!
+    let networkService: NetworkServiceProtocol
     
     var isLoading = false {
         didSet {
@@ -48,36 +48,28 @@ class PeopleListViewModel {
     
     private func processFetched(owners: People) {
         peopleCellViewModel.removeAll()
-        var catNamesWithMaleOwner: [String] = []
-        var catNamesWithFemaleOwner: [String] = []
-        var catNamesWithOtherOwner: [String] = []
-        
-        for petOwner in owners {
-            if let pets = petOwner.pets {
-                let catNames = pets.filter {$0.type == PetType.cat}.compactMap({return $0.name})
-                switch petOwner.gender {
-                case .Male:
-                    catNamesWithMaleOwner.append(contentsOf: catNames)
-                case .Female:
-                    catNamesWithFemaleOwner.append(contentsOf: catNames)
-                case .Other:
-                    catNamesWithOtherOwner.append(contentsOf: catNames)
-                default:
-                    break
-                }
-            }
-        }
-        
-        let catsWithMaleOwners: PeopleCellViewModel = PeopleCellViewModel(names: catNamesWithMaleOwner.sorted(by: <), gender: Gender.Male)
-        let catsWithFeMaleOwners: PeopleCellViewModel = PeopleCellViewModel(names: catNamesWithFemaleOwner.sorted(by: <), gender: Gender.Female)
-        let catsWithOtherOwners: PeopleCellViewModel = PeopleCellViewModel(names: catNamesWithOtherOwner.sorted(by: <), gender: Gender.Other)
+        let allCats = owners.catsSeparatedByGenders
+
+        let catsWithMaleOwners = PeopleCellViewModelBuilder.build(from: allCats.male,
+                                                                  gender: .male)
         peopleCellViewModel.append(catsWithMaleOwners)
+
+        let catsWithFeMaleOwners = PeopleCellViewModelBuilder.build(from: allCats.female,
+                                                                gender: .female)
         peopleCellViewModel.append(catsWithFeMaleOwners)
+
+        let catsWithOtherOwners = PeopleCellViewModelBuilder.build(from:allCats.other,
+                                                                   gender: .other)
         if catsWithOtherOwners.names.count > 0 {
             peopleCellViewModel.append(catsWithOtherOwners)
         }
     }
-    
+}
+
+struct PeopleCellViewModelBuilder {
+    static func build(from names: [String], gender: Gender) -> PeopleCellViewModel {
+        return PeopleCellViewModel(names: names.sorted(by: <), gender: gender)
+    }
 }
 
 // TableView helpers

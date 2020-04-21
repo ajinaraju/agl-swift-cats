@@ -6,8 +6,6 @@
 //  Copyright © 2020 Yilei He. All rights reserved.
 //
 
-import Foundation
-
 struct PeopleCellViewModel {
     var names: [String]
     var gender:  Gender
