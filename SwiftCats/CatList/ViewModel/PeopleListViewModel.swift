@@ -48,24 +48,34 @@ class PeopleListViewModel {
     
     private func processFetched(owners: People) {
         peopleCellViewModel.removeAll()
-        var catNamesWithMailOwner: [String] = []
+        var catNamesWithMaleOwner: [String] = []
         var catNamesWithFemaleOwner: [String] = []
+        var catNamesWithOtherOwner: [String] = []
         
         for petOwner in owners {
             if let pets = petOwner.pets {
                 let catNames = pets.filter {$0.type == PetType.cat}.compactMap({return $0.name})
-                if petOwner.gender == Gender.Male {
-                    catNamesWithMailOwner.append(contentsOf: catNames)
-                } else {
+                switch petOwner.gender {
+                case .Male:
+                    catNamesWithMaleOwner.append(contentsOf: catNames)
+                case .Female:
                     catNamesWithFemaleOwner.append(contentsOf: catNames)
+                case .Other:
+                    catNamesWithOtherOwner.append(contentsOf: catNames)
+                default:
+                    break
                 }
             }
         }
         
-        let catsWithMaleOwners: PeopleCellViewModel = PeopleCellViewModel(names: catNamesWithMailOwner.sorted(by: <), gender: Gender.Male)
+        let catsWithMaleOwners: PeopleCellViewModel = PeopleCellViewModel(names: catNamesWithMaleOwner.sorted(by: <), gender: Gender.Male)
         let catsWithFeMaleOwners: PeopleCellViewModel = PeopleCellViewModel(names: catNamesWithFemaleOwner.sorted(by: <), gender: Gender.Female)
+        let catsWithOtherOwners: PeopleCellViewModel = PeopleCellViewModel(names: catNamesWithOtherOwner.sorted(by: <), gender: Gender.Other)
         peopleCellViewModel.append(catsWithMaleOwners)
         peopleCellViewModel.append(catsWithFeMaleOwners)
+        if catsWithOtherOwners.names.count > 0 {
+            peopleCellViewModel.append(catsWithOtherOwners)
+        }
     }
     
 }
