@@ -1,0 +1,6 @@
+framework module Pods_SwiftCats {
+  umbrella header "Pods-SwiftCats-umbrella.h"
+
+  export *
+  module * { export * }
+}

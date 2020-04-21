@@ -7,7 +7,7 @@
 //
 import UIKit
 
-final class PeopleListViewController: UITableViewController, AlertPresentable {
+final class PeopleListViewController: UITableViewController, AlertPresentable, LoadAnimatable {
     
     let viewModel = PeopleListViewModel()
     let refreshContrlr = UIRefreshControl()
@@ -45,10 +45,10 @@ final class PeopleListViewController: UITableViewController, AlertPresentable {
                 guard let weakSelf = self else { return }
                 
                 if weakSelf.viewModel.isLoading {
-                    //weakSelf.startLoadAnimation()
+                    weakSelf.startLoadAnimation()
                     weakSelf.refreshContrlr.beginRefreshing()
                 } else {
-                    //weakSelf.stopAnimating()
+                    weakSelf.stopAnimating()
                     weakSelf.refreshContrlr.endRefreshing()
                 }
             }
